@@ -16,7 +16,7 @@ image = Image.open(args.image)
 
 # Random mask
 imarray = numpy.random.rand(image.height, image.width, 3) * 255
-mask = Image.fromarray(imarray.astype('uint8')).convert('RGB')
+mask = Image.fromarray(imarray.astype('uint8')).convert(image.mode)
 
 # remove exif data
 data = list(image.getdata())
